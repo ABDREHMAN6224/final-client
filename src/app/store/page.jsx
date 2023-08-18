@@ -1,9 +1,14 @@
 "use client"
+// import dynamic from "next/dynamic";
+// const MyAwesomeMap = dynamic(() => import("../components/Map/"), {
+//   ssr: false,
+// });
+
 import React, { useRef} from "react";
 import {FaChevronRight} from "react-icons/fa"
 import styles from "./store.module.css";
-import SingleProduct from "@/components/SingleProduct";
-import Map from "@/components/Map";
+import SingleProduct from "../../components/SingleProduct";
+import Map from "../../components/Map";
 
 const Store = () => {
   const data = [

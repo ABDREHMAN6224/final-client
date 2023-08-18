@@ -9,7 +9,6 @@
     grid-template-columns: 2fr 1fr;
     display: grid;
     height: 100vh;
-    /* height: 100vh; */
 }
 .map{
     height: 100vh;

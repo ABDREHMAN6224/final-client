@@ -1,3 +1,4 @@
+"use client"
 import Video from '@/components/Video';
 import Featured from '@/components/Featured';
 import LeatherGoods from '@/components/LeatherGoods';

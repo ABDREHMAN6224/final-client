@@ -1,20 +1,9 @@
 "use client"
-import React from "react";
+import React, { useRef} from "react";
 import {FaChevronRight} from "react-icons/fa"
 import styles from "./store.module.css";
 import SingleProduct from "@/components/SingleProduct";
-
-import { MapContainer, TileLayer ,Marker,Popup} from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
+import Map from "@/components/Map";
 
 const Store = () => {
   const data = [
@@ -112,40 +101,19 @@ const Store = () => {
       code: [35.939166515504624, -118.33661544779294],
     },
   ];
-  // const mapRef=useRef(null)
+  const mapRef=useRef(null)
  
 
   const handleClick=(d)=>{
-      // const {current={}}=mapRef
-      // if(current!={}){
-      // mapRef.current.setView(d);
-    // }
-  }
+      const {current={}}=mapRef
+      if(current!={}){
+      mapRef.current.setView(d);
+    }}
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.map}>
-          <MapContainer zoom={25} center={data[0].code} >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {data.map((d) => {
-              return (
-                <Marker key={d.id}
-                  position={d.code}
-                  icon={L.divIcon({
-                    iconSize: [40, 40],
-                    iconAnchor: [38 / 2, 38 + 9],
-                    className: "marker",
-                    html: "🚩",
-                  })}
-                >
-                  <Popup>{d.title}</Popup>
-                </Marker>
-              );
-            })}
-          </MapContainer>
+          <Map data={data} mapRef={mapRef}/>
         </div>
         <div className={styles.data}>
           <div className={styles.info}>

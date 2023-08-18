@@ -1,0 +1,27 @@
+.container{
+    /* height: 75vh; */
+    padding: 2rem 3.3rem;
+    background-color: #f6f1ed;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #183f26;
+}
+.products_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width:990px){
+    .products_container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:768px){
+    .products_container{
+        grid-template-columns: 1fr ;
+    }
+}

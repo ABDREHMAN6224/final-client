@@ -188,7 +188,9 @@
 
 // export default Store;
 
-import React from 'react'
+import React,{useRef} from 'react'
+
+const mapRef=useRef(null)
 
 const Store = () => {
   return (

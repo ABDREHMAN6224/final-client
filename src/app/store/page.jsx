@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 // import React, { useRef} from "react";
 // import {FaChevronRight} from "react-icons/fa"
 // import styles from "./store.module.css";

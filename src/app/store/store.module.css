@@ -2,7 +2,7 @@
     background-color: #183f26;
     padding-top: 8rem;
     color: white;
-    display: grid;
+    /* display: grid; */
 }
 .container{
     overflow-y: scroll;
@@ -69,6 +69,10 @@
  
     .container{
         grid-template-columns: 1fr;
+        height: auto;
+    }
+    .map{
+        display: none;
     }
    
 }

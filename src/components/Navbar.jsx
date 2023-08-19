@@ -39,14 +39,22 @@ const Navbar = () => {
         </div>
         <div
           className={styles.down_container}
-          style={{ background: color, borderTop: border,visibility:displaybar}}
+          style={{
+            background: color,
+            borderTop: border,
+            visibility: displaybar,
+          }}
         >
-          <Link href={"/"}>Catalogue</Link>
-          <Link href={"/"}>personalization</Link>
-          <Link href={"/"}>maison goyard</Link>
-          <Link href={"/"}>boutiques</Link>
+          <Link href={"/"}>
+            Catalogue <div className={styles.dot}>.</div>
+          </Link>
+          <Link href={"/"}>
+            personalization <div className={styles.dot}>.</div>
+          </Link>
+          <Link href={"/"}>maison goyard <div className={styles.dot}>.</div></Link>
+          <Link href={"/"}>boutiques <div className={styles.dot}>.</div></Link>
         </div>
-        {smallBarOpen && <SmallBar close={toggleBar}/>}
+        {smallBarOpen && <SmallBar close={toggleBar} />}
       </div>
     </>
   );

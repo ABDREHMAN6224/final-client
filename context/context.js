@@ -7,6 +7,12 @@ const AppContext=createContext()
 export const AppProvider=({children})=>{
     const [color,setColor]=useState("rgba(24, 63, 38,1)")
     const [border,setBorder]=useState("1px solid white")
+    const [smallBarOpen,setSmallBarOpen]=useState(false)
+        
+    
+    const toggleBar=()=>{
+        setSmallBarOpen(!smallBarOpen)
+    }
     const handleScroll=()=>{
         if(typeof window !== "undefined"){
         console.log(window.scrollY)
@@ -21,7 +27,7 @@ export const AppProvider=({children})=>{
 }
     }
     return(
-        <AppContext.Provider value={{color,handleScroll,border}}>
+        <AppContext.Provider value={{color,handleScroll,border,smallBarOpen,toggleBar}}>
             {children}
         </AppContext.Provider>
     )

@@ -60,11 +60,20 @@
     font-weight: bold;
 }
 .navbar{
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
     right: 0;
+}
+.bars{
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 @media (max-width:990px){
     .down_container{
@@ -72,14 +81,26 @@
         visibility: hidden;
         opacity: 0;
     }
-    .first{
+    .options{
         display: none;
         visibility: hidden;
         opacity: 0;
     }
+    .bars{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+
+    }
 }
 @media (max-width:768px){
-  
+    
+    .bars{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    
+    }
     .options{
         visibility: hidden;
         display: none;

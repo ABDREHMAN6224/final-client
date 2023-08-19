@@ -5,6 +5,8 @@ import LeatherGoods from '@/components/LeatherGoods';
 import LeatherFeatures from '@/components/LeatherFeatures';
 import Newsletter from '@/components/Newsletter';
 import Testimonial from '@/components/Testimonial';
+import SmallBar from '@/components/SmallBar';
+import { useAppContext } from '../../context/context';
 
 export default function Home() {
   const products=[
@@ -24,25 +26,28 @@ export default function Home() {
     title:"artois gm bag"
   },
 ]
+  const { smallBarOpen } = useAppContext();
+
   return (
     <>
+      {!smallBarOpen && <SmallBar />}
       <Video />
       <Featured />
       <LeatherGoods />
       <LeatherFeatures />
       <Video
-      title_l1={"LUST"}
-      title_l2={""}
-      title_l3={""}
-      pl1={"The goyard"}
-      pl2={"travel bags"}
-      isLoading={true}
-      text='discover'
+        title_l1={"LUST"}
+        title_l2={""}
+        title_l3={""}
+        pl1={"The goyard"}
+        pl2={"travel bags"}
+        isLoading={true}
+        text="discover"
         video={
           "https://www.goyard.com/media/video/homepage/2023/08/desktop/Bloc-video-3-guide-de-porte-desktop.mp4"
         }
       />
-      <Featured products={products} title='now boarding!'/>
+      <Featured products={products} title="now boarding!" />
       <Newsletter />
       <Testimonial />
     </>

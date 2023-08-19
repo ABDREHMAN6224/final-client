@@ -1,8 +1,10 @@
+"use client"
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
-import { AppProvider } from '../../context/context'
+import { AppProvider, useAppContext } from '../../context/context'
+import SmallBar from '@/components/SmallBar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {

@@ -10,7 +10,7 @@ const Navbar = () => {
   if(typeof window !== "undefined"){
     window.addEventListener('scroll',handleScroll)
   }
-  const { smallBarOpen,toggleBar } = useAppContext();
+  const { smallBarOpen,toggleBar,displaybar } = useAppContext();
 
   return (
     <>
@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
         <div
           className={styles.down_container}
-          style={{ background: color, borderTop: border }}
+          style={{ background: color, borderTop: border,visibility:displaybar}}
         >
           <Link href={"/"}>Catalogue</Link>
           <Link href={"/"}>personalization</Link>
